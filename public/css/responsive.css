@@ -1,0 +1,23 @@
+@media (max-width: 900px) {
+    header {
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar ul li {
+        font-size: 15px;
+        padding: 15px;
+    }
+
+    .container {
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .div-welcome {
+        width: 400px;
+    }
+}
