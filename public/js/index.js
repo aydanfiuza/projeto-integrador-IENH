@@ -24,3 +24,21 @@ iconeEntrada.onmouseover = () => {
 iconeEntrada.onmouseout = () => {
     corEntrada.style.color = "#38B6FF";
 };
+
+iconeSaida.onmouseover = () => {
+    corSaida.style.color = "black";
+    corSaida.style.transition = "0.4s";
+};
+
+iconeSaida.onmouseout = () => {
+    corSaida.style.color = "#38B6FF";
+};
+
+iconeRelatorio.onmouseover = () => {
+    corRelatorio.style.color = "black";
+    corRelatorio.style.transition = "0.4s";
+};
+
+iconeRelatorio.onmouseout = () => {
+    corRelatorio.style.color = "#38B6FF";
+};
