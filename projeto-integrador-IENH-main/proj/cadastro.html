@@ -178,7 +178,6 @@ input[type="submit"]:hover{
 
     <main>
         <div class="container" >
-
             <div class="content">
               <div id="cadastro">
                 <form method="post" action="">
@@ -187,16 +186,12 @@ input[type="submit"]:hover{
                     <label for="referencia">Referência do Produto</label>
                     <input id="referencia" name="referencia" required="required" type="number" max="999999" placeholder="123456"/>
                   </p>
-        
                   <p>
                     <label for="produto">Produto</label>
-                    <input id="produto" name="prduto" required="required" type="text" placeholder="Computador de mesa" />
+                    <input id="produto" name="produto" required="required" type="text" placeholder="Computador de mesa"/>
                   </p>
-                  
-                  
-        
                   <p>
-                    <input type="submit" value="Cadastrar Produto" />
+                    <input id="submit-button" type="submit" value="Cadastrar Produto"/>
                   </p>
                 </form>
               </div>
@@ -205,5 +200,14 @@ input[type="submit"]:hover{
     </main>
     <footer>Desenvolvido por</footer>
     
+    <script>
+    let submit = document.getElementById("submit-button")
+    let produto = document.getElementById("produto")
+    let referencia = document.getElementById("referencia")
+
+    submit.addEventListener("click", () => {
+        window.alert("Produto cadastrado com sucesso.")
+    });
+    </script>
 </body>
 </html>

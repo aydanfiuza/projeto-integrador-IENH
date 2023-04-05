@@ -53,3 +53,5 @@ iconeRelatorio.onmouseover = () => {
 iconeRelatorio.onmouseout = () => {
     corRelatorio.style.color = "#38B6FF";
 }
+
+
