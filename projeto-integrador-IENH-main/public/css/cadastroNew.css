@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;  
+    font-family: "Rubik";
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    max-width: 100vw;
+    padding: 0px 15px;
+    margin: 0 auto;
+    height: 80px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar ul li {
+    color: #38B6FF;
+    padding: 0px 8px;
+    text-transform: uppercase;
+    transition: 0.4s;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.navbar ul li:hover {
+    color: #000000;
+}
+
+.navbar i {
+    color: #38B6FF;
+
+}
+
+.navbar i:hover {
+    color: #000000;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100vw;
+    height: calc(100vh - 80px);
+    padding: 0px 15px;
+    margin: 0 auto;
+}
+
+.div-form {
+}
+
+.div-welcome {
+    width: 550px;
+    font-size: 18px;
+}
+
+footer {
+    color: white;
+    background-color: #1f1d1d;
+    margin: 0 auto;
+    height: 500px;
+    max-width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 30px;
+}
+
+.div-infos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.div-redes {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-footer {
+    width: 150px;
+}
