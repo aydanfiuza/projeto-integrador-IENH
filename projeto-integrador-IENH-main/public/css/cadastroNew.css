@@ -60,7 +60,41 @@ header {
     margin: 0 auto;
 }
 
-.div-form {
+form {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.input {
+    background-color: #f3eeee;
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 40px;
+    padding: 10px;
+    transition: 0.4s;
+}
+
+.form-inputs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#submit-button {
+    width: 120px;
+    height: 40px;
+    background: #38B6FF;
+    border: 1px solid #38B6FF;
+    transition: 0.4s;
+}
+
+#submit-button:hover {
+    border-color: #000000;
+    background: #000000;
+    color: #FFFFFF;
 }
 
 .div-welcome {
