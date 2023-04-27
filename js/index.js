@@ -64,4 +64,3 @@ iconeLogin.onmouseover = () => {
 iconeLogin.onmouseout = () => {
   corLogin.style.color = "#38B6FF";
 }
-
