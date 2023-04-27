@@ -1,0 +1,1 @@
+SELECT * FROM projeto_integrador.cadastro;
