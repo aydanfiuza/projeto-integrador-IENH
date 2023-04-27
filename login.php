@@ -14,6 +14,7 @@
 
   <link rel="stylesheet" href="<?= $BASE_URL ?>/css/style.css">
   <link rel="stylesheet" href="<?= $BASE_URL ?>/css/responsive.css">
+  <link rel="stylesheet" href="<?= $BASE_URL ?>/css/stylesLogin.css">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
@@ -21,23 +22,28 @@
   
 </head>
 <body>
-  <?php include_once("templates/nav.php"); ?>
+    
+  <div class="container">
+    <div class="left">
+        <h1 class="title-left">Bem-vindo!</h1>
+        <p class="p-left">Ainda não tem uma conta e gostaria de fazer parte da nossa história? Cadastre-se agora!</p>
+        <button class="button-left">Cadastre-se</button>
+      </div>
+      <div class="right">
+        <form action="php/processoLogin.php" method="POST" id="form-login">
+          <div class="input-field">
+            <input id="email" name="email" type="email" placeholder="Email">
+          </div>
+          <div class="input-field">
+            <input id="senha" name="senha" type="password" required="required" placeholder="Senha">
+          </div>
+          <button class="button-right" id="button-right" type="submit">Entrar</button>
+        </form>
+      </div>
+    </div>
+    <script src="styleLogin.js"></script>
 
   
-  <main class="container">
-    <div class="container-form">
-      <form action="" id="form-login" id="formulario">
-        <h1 class="h1-cadastro">Login</h1>
-        <div class="form-inputs-container">
-          <input type="text" class="form-control" id="login-email" placeholder="E-mail" required>
-          <input type="password" class="form-control" id="login-senha" placeholder="Senha" required>
-        </div>
-      </form>
-    </div>
-  </main>
-
-
-  <?php include_once("templates/footer.php"); ?>
   <script src="https://kit.fontawesome.com/5fda86d671.js" crossorigin="anonymous"></script>
   <script src="<?= $BASE_URL ?>/js/index.js"></script>
 

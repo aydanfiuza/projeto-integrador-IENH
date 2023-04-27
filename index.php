@@ -2,7 +2,13 @@
   include_once("php/conexao.php");
   include_once("php/url.php");
 
-  
+  session_start();
+
+  if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+    $id = $_SESSION['id'];
+    $nome = $_SESSION['nome'];
+  }
 
 ?>
 

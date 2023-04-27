@@ -1,13 +1,16 @@
 <?php
 
-
-
-class NovoUsuario {
+class Usuario {
     private $username;
     private $nome;
     private $email;
     private $senha;
     private $cnpj;
+    private $conexao;
+
+    public function __construct(PDO $conexao){
+      $this->conexao = $conexao;
+    }
 
 
     // GETTERS SETTERS USERNAME
@@ -38,8 +41,8 @@ class NovoUsuario {
     }
 
     // GETTERS SETTERS SENHA
-    public function setSenha($senha) {
-        $this->senha = md5($senha);
+    public function setSenha($senha) { 
+        $this->senha = MD5($senha);
     }
 
     public function getSenha() {
@@ -57,13 +60,8 @@ class NovoUsuario {
 
 
     public function inserirUsuario() {
-        $user = 'root';
-        $senha = '';
-        
     
-        $conexao = new PDO('mysql:host=127.0.0.1:1360;dbname=projeto_integrador', $user, $senha);
-    
-        $stmt = $conexao->prepare("INSERT INTO usuario (username, nome, email, senha, cnpj) VALUES (:username, :nome, :email, :senha, :cnpj)");
+        $stmt = $this->conexao->prepare("INSERT INTO usuario (username, nome, email, senha, cnpj) VALUES (:username, :nome, :email, :senha, :cnpj)");
 
         $username = $this->getUsername();
         $nome = $this->getNome();
@@ -79,5 +77,28 @@ class NovoUsuario {
 
         $stmt->execute();
     }
+    public function loginUser() {
+      $stmt = $this->conexao->prepare("SELECT id, email, username, senha FROM usuario WHERE email = :email AND senha = :senha LIMIT 1");
+
+      $email = $this->getEmail();
+      $senha = $this->getSenha();
+      $stmt->bindParam(":email", $email);
+      $stmt->bindParam(":senha", $senha);
+
+      $stmt->execute();
+
+      $resultLogin = $stmt->fetch();
+      
+      if ($resultLogin) {
+        session_start();
+        $_SESSION['email'] = $resultLogin['email'];
+        $_SESSION['id'] = $resultLogin['id'];
+        $_SESSION['username'] = $resultLogin['username'];
+        $_SESSION['nome'] = $resultLogin['nome'];
+
+        header("Location: ../index.php");
+      }
+    }
 
 }
+
