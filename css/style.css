@@ -9,6 +9,11 @@
     font-family: "Rubik";
 }
 
+a {
+  text-decoration: none!important;
+}
+
+
 header {
     display: flex;
     justify-content: space-between;
@@ -27,7 +32,7 @@ header {
     display: flex;
 }
 
-.navbar ul li {
+.navbar ul li, .navbar ul li a {
     color: #38B6FF;
     padding: 0px 8px;
     text-transform: uppercase;
@@ -36,7 +41,7 @@ header {
     font-size: 20px;
 }
 
-.navbar ul li:hover {
+.navbar ul li:hover, .navbar ul li a:hover {
     color: #000000;
 }
 
@@ -89,3 +94,4 @@ footer {
 .logo-footer {
     width: 150px;
 }
+
