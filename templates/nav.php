@@ -1,3 +1,14 @@
+<?php 
+  $link = [];
+  if (isset($username)) {
+    $link['li'] = 'link-enabled';
+    $link['i'] = 'i-link-enabled';
+  } else {
+    $link['li'] = 'link-disabled';
+    $link['i'] = 'i-link-disabled';
+  }
+?>
+
 <header>
   <div class="div-logo">
    
@@ -20,24 +31,24 @@
       <!-- FIM IF -->
       <?php endif; ?>
         
-      <li id="home" <?php if(isset($username)) {echo 'class="link-enabled"';} else {echo 'class="link-disabled"';} ?>>
-        <i <?php if (isset($username)) {echo 'id="cor0" class="i-link-enabled fa-solid fa-house"';} else {echo 'class="i-link-disabled fa-solid fa-house"';}?>></i>
+      <li id="home" class="<?= $link['li'] ?>">
+        <i <?php if (isset($username)) {echo 'id="cor0"';}?> class="<?= $link['i'] ?> fa-solid fa-house"></i>
         <span>Home</span>
       </li>
-      <li id="cadastro" <?php if(isset($username)) {echo 'class="link-enabled"';} else {echo 'class="link-disabled"';} ?>>
-        <i <?php if (isset($username)) {echo 'id="cor1" class="i-link-enabled fa-solid fa-arrow-up-from-bracket"';} else {echo 'class="i-link-disabled fa-solid fa-arrow-up-from-bracket"';}?>></i>
+      <li id="cadastro" class="<?= $link['li'] ?>">
+        <i <?php if (isset($username)) {echo 'id="cor1"';}?> class="<?= $link['i'] ?> fa-solid fa-arrow-up-from-bracket"></i>
         <span>Cadastro</span>
       </li>
-      <li id="entrada" <?php if(isset($username)) {echo 'class="link-enabled"';} else {echo 'class="link-disabled"';} ?>>
-        <i <?php if (isset($username)) {echo 'id="cor2" class="i-link-enabled fa-solid fa-plus"';} else {echo 'class="i-link-disabled fa-solid fa-solid fa-plus"';}?>></i>
+      <li id="entrada" class="<?= $link['li'] ?>">
+        <i <?php if (isset($username)) {echo 'id="cor2"';}?> class="<?= $link['li'] ?> fa-solid fa-plus"></i>
         <span>Entrada</span>
       </li>
-      <li id="saida" <?php if(isset($username)) {echo 'class="link-enabled"';} else {echo 'class="link-disabled"';} ?>>
-        <i <?php if (isset($username)) {echo 'id="cor3" class="i-link-enabled fa-solid fa-minus"';} else {echo 'class="i-link-disabled fa-solid fa-minus fa-plus"';}?>></i>
+      <li id="saida" class="<?= $link['li'] ?>">
+        <i <?php if (isset($username)) {echo 'id="cor3"';}?> class="<?= $link['li'] ?> fa-solid fa-minus"></i>
         <span>Saída</span>
       </li>
-      <li id="relatorio" <?php if(isset($username)) {echo 'class="link-enabled"';} else {echo 'class="link-disabled"';} ?>>
-        <i <?php if (isset($username)) {echo 'id="cor4" class="i-link-enabled fa-solid fa-file"';} else {echo 'class="i-link-disabled fa-solid fa-file"';}?>></i>
+      <li id="relatorio" class="<?= $link['li'] ?>">
+        <i <?php if (isset($username)) {echo 'id="cor4"';}?> class="<?= $link['li'] ?> fa-solid fa-file"></i>
         <span>Relatório</span>
       </li>
     </ul>
