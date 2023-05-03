@@ -33,19 +33,19 @@
         
       <li id="home" class="<?= $link['li'] ?>">
         <i <?php if (isset($username)) {echo 'id="cor0"';}?> class="<?= $link['i'] ?> fa-solid fa-house"></i>
-        <span>Home</span>
+        <span><a href="index.php">Home</a></span>
       </li>
       <li id="cadastro" class="<?= $link['li'] ?>">
         <i <?php if (isset($username)) {echo 'id="cor1"';}?> class="<?= $link['i'] ?> fa-solid fa-arrow-up-from-bracket"></i>
-        <span>Cadastro</span>
+        <span><a href="cadastroNew.php">Cadastro</a></span>
       </li>
       <li id="entrada" class="<?= $link['li'] ?>">
         <i <?php if (isset($username)) {echo 'id="cor2"';}?> class="<?= $link['li'] ?> fa-solid fa-plus"></i>
-        <span>Entrada</span>
+        <span><a href="entrada.php">Entrada</a></span>
       </li>
       <li id="saida" class="<?= $link['li'] ?>">
         <i <?php if (isset($username)) {echo 'id="cor3"';}?> class="<?= $link['li'] ?> fa-solid fa-minus"></i>
-        <span>Saída</span>
+        <span><a href="saida.php">Saída</a></span>
       </li>
       <li id="relatorio" class="<?= $link['li'] ?>">
         <i <?php if (isset($username)) {echo 'id="cor4"';}?> class="<?= $link['li'] ?> fa-solid fa-file"></i>
