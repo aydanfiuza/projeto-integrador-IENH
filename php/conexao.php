@@ -2,7 +2,7 @@
 
 
     $user = 'root';
-    $senha = '';
+    $senha = 'ienh';
     
 
     $conexao = new PDO('mysql:host=localhost;dbname=projeto_integrador', $user, $senha);
