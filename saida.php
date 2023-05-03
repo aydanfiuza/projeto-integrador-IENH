@@ -19,11 +19,11 @@
     <header>
         <menu>
             <ul>
-                <li class="cabecalho"><a href="www.g1.globo.com">INÍCIO</a></li>
-                <li class="cabecalho"><a href="cadastro.html">CADASTRO</a></li>
-                <li class="cabecalho"><a href="entrada.html">ENTRADA</a></li>
+                <li class="cabecalho"><a href="index.php">INÍCIO</a></li>
+                <li class="cabecalho"><a href="cadastroNew.php">CADASTRO</a></li>
+                <li class="cabecalho"><a href="entrada.php">ENTRADA</a></li>
                 <li class="cabecalho pg_atual">SAÍDA</li>
-                <li class="cabecalho"><a href="estoque.html">ESTOQUE</a></li>
+                <li class="cabecalho"><a href="estoque.php">ESTOQUE</a></li>
             </ul>
         </menu>
     </header>
