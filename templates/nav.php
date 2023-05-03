@@ -49,7 +49,7 @@
       </li>
       <li id="relatorio" class="<?= $link['li'] ?>">
         <i <?php if (isset($username)) {echo 'id="cor4"';}?> class="<?= $link['li'] ?> fa-solid fa-file"></i>
-        <span>Relatório</span>
+        <span><a href="estoque.php">Relatório</a></span>
       </li>
     </ul>
   </nav>
