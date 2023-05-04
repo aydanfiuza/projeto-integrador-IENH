@@ -31,26 +31,31 @@
       <!-- FIM IF -->
       <?php endif; ?>
         
-      <li id="home" class="<?= $link['li'] ?>">
+      <a href="<?= $BASE_URL ?>/index.php"><li id="home" class="<?= $link['li'] ?>">
         <i <?php if (isset($username)) {echo 'id="cor0"';}?> class="<?= $link['i'] ?> fa-solid fa-house"></i>
-        <span><a href="index.php">Home</a></span>
-      </li>
-      <li id="cadastro" class="<?= $link['li'] ?>">
+        <span>Home</span>
+      </li></a>
+
+      <a href="<?= $BASE_URL ?>/cadastroNew.php"><li id="cadastro" class="<?= $link['li'] ?>">
         <i <?php if (isset($username)) {echo 'id="cor1"';}?> class="<?= $link['i'] ?> fa-solid fa-arrow-up-from-bracket"></i>
-        <span><a href="cadastroNew.php">Cadastro</a></span>
-      </li>
-      <li id="entrada" class="<?= $link['li'] ?>">
+        <span>Cadastro</span>
+      </li></a>
+
+      <a href="<?= $BASE_URL ?>/entrada.php"><li id="entrada" class="<?= $link['li'] ?>">
         <i <?php if (isset($username)) {echo 'id="cor2"';}?> class="<?= $link['li'] ?> fa-solid fa-plus"></i>
-        <span><a href="entrada.php">Entrada</a></span>
-      </li>
+        <span>Entrada</span>
+      </li></a>
+
       <li id="saida" class="<?= $link['li'] ?>">
         <i <?php if (isset($username)) {echo 'id="cor3"';}?> class="<?= $link['li'] ?> fa-solid fa-minus"></i>
-        <span><a href="saida.php">Saída</a></span>
+        <span>Saída</span>
       </li>
+
       <li id="relatorio" class="<?= $link['li'] ?>">
         <i <?php if (isset($username)) {echo 'id="cor4"';}?> class="<?= $link['li'] ?> fa-solid fa-file"></i>
-        <span><a href="estoque.php">Relatório</a></span>
+        <span>Relatório</span>
       </li>
+
     </ul>
   </nav>
 </header>
