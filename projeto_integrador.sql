@@ -26,51 +26,35 @@ USE `projeto_integrador`;
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `entrada`
+-- Estrutura da tabela `movimentacao`
 --
 
-DROP TABLE IF EXISTS `entrada`;
-CREATE TABLE IF NOT EXISTS `entrada` (
-  `idEntrada` int(11) NOT NULL,
-  `Produto_idProduto` int(11) NOT NULL,
-  `Quantidade` int(11) DEFAULT NULL,
-  `Data_entrada` date DEFAULT NULL,
-  `idUser` int(11) DEFAULT NULL,
-  PRIMARY KEY (`idEntrada`),
-  KEY `fk_Compra_Produto_idx` (`Produto_idProduto`),
+DROP TABLE IF EXISTS `movimentacao`;
+CREATE TABLE IF NOT EXISTS `movimentacao` (
+  `idMovimento` int(11) NOT NULL,
+  `estoque_idProduto` int(11) NOT NULL,
+  `tipoMovimento` varchar(8) NOT NULL,
+  `quantidade` int(11) NOT NULL,
+  `dataMovimento` date DEFAULT NULL,
+  `idUser` int(11) NOT NULL,
+  PRIMARY KEY (`idMovimento`),
+  KEY `fk_Compra_Estoque_idx` (`estoque_idProduto`),
   KEY `fk_idUser` (`idUser`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
 
 --
--- Estrutura da tabela `fornecedor`
+-- Estrutura da tabela `estoque`
 --
 
-DROP TABLE IF EXISTS `fornecedor`;
-CREATE TABLE IF NOT EXISTS `fornecedor` (
-  `idFornecedor` int(11) NOT NULL,
-  `CNPJ` varchar(17) DEFAULT NULL,
-  `Nome` varchar(45) DEFAULT NULL,
-  `Cidade` varchar(45) DEFAULT NULL,
-  `Situação` enum('Ativo','Inativo') DEFAULT NULL,
-  PRIMARY KEY (`idFornecedor`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `produto`
---
-
-DROP TABLE IF EXISTS `produto`;
-CREATE TABLE IF NOT EXISTS `produto` (
+DROP TABLE IF EXISTS `estoque`;
+CREATE TABLE IF NOT EXISTS `estoque` (
   `idProduto` int(11) NOT NULL,
-  `Fornecedor_idFornecedor` int(11) NOT NULL,
-  `ValorUnitário` varchar(45) DEFAULT NULL,
-  `Descrição` varchar(80) DEFAULT NULL,
-  PRIMARY KEY (`idProduto`),
-  KEY `fk_Produto_Fornecedor1_idx` (`Fornecedor_idFornecedor`)
+  `marca` varchar(80) DEFAULT NULL,
+  `descricao` varchar(80) DEFAULT NULL,
+  `unidade` varchar(10) NOT NULL,
+  `quantidade` int(10) NOT NULL,
+  PRIMARY KEY (`idProduto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -102,19 +86,21 @@ INSERT INTO `usuario` (`id`, `username`, `nome`, `email`, `senha`, `cnpj`) VALUE
 --
 
 --
--- Limitadores para a tabela `entrada`
+-- Limitadores para a tabela `estoque`
 --
-ALTER TABLE `entrada`
-  ADD CONSTRAINT `fk_Compra_Produto` FOREIGN KEY (`Produto_idProduto`) REFERENCES `produto` (`idProduto`),
+ALTER TABLE `movimentacao`
+  ADD CONSTRAINT `fk_Compra_Estoque` FOREIGN KEY (`estoque_idProduto`) REFERENCES `estoque` (`idProduto`),
   ADD CONSTRAINT `fk_idUser` FOREIGN KEY (`idUser`) REFERENCES `usuario` (`id`);
 
 --
--- Limitadores para a tabela `produto`
---
-ALTER TABLE `produto`
-  ADD CONSTRAINT `fk_Produto_Fornecedor1` FOREIGN KEY (`Fornecedor_idFornecedor`) REFERENCES `fornecedor` (`idFornecedor`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+-- Insere Valores em PRODUTO --
+
+INSERT INTO `projeto_integrador`.`estoque` (`idProduto`, `marca`, `descricao`, `unidade`, `quantidade`) VALUES 
+('1', 'Razer', 'Mouse DeathAdder V2', 'un', '5'),
+('2', 'Dell', 'Notebook Preto', 'un', '2'),
+('3', 'Samsung', 'Celular Galaxy 30', 'un', '18')

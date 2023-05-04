@@ -2,7 +2,7 @@
   include_once("php/conexao.php");
   include_once("php/url.php");
   
-  $query = $conexao->prepare("SELECT * FROM produto");
+  $query = $conexao->prepare("SELECT * FROM estoque");
   $query->execute();
   $res = $query->fetchAll();
 
@@ -44,22 +44,28 @@
                     <table id="tabela">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>ID Produto</th>
+                                <th>Marca</th>
                                 <th>Descrição</th>
+                                <th>Unidade</th>
                                 <th>Quantidade</th>
                             </tr>
                             <tr>
                                 <th><input type="text" id="txtColuna1"/></th>
                                 <th><input type="text" id="txtColuna2"/></th>
                                 <th><input type="text" id="txtColuna3"/></th>
+                                <th><input type="text" id="txtColuna4"/></th>
+                                <th><input type="text" id="txtColuna5"/></th>
                             </tr>            
                         </thead>
                         <tbody>
                             <?php foreach ($res as $dado): ?>
                                 <tr>
                                     <td><?= $dado['idProduto'] ?></td> 
-                                    <td><?= $dado['Descrição'] ?></td> 
-                                    <td><?= $dado['Quantidade'] ?></td>
+                                    <td><?= $dado['marca'] ?></td> 
+                                    <td><?= $dado['descricao'] ?></td>
+                                    <td><?= $dado['unidade'] ?></td>
+                                    <td><?= $dado['quantidade'] ?></td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
