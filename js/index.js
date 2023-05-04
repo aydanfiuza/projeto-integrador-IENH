@@ -9,6 +9,7 @@ const corSaida = document.getElementById("cor3");
 const iconeRelatorio = document.getElementById("relatorio");
 const corRelatorio = document.getElementById("cor4");
 const iconeLogin = document.getElementById("login");
+const iconeUser = document.getElementById("user");
 const corLogin = document.getElementById("cor5");
 
 iconeHome.onmouseover = () => {
@@ -63,4 +64,13 @@ iconeLogin.onmouseover = () => {
 
 iconeLogin.onmouseout = () => {
   corLogin.style.color = "#38B6FF";
+}
+
+iconeUser.onmouseover = () => {
+  corUser.style.color = "black";
+  corUser.style.transition = "0.4s";
+}
+
+iconeUser.onmouseout = () => {
+  corUser.style.color = "#38B6FF";
 }

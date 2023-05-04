@@ -8,7 +8,11 @@ class Usuario {
     public $email;
     public $senha;
     public $cnpj;
+    public $conexao;
 
+    public function __construct(PDO $conn) {
+      $this->conexao = $conn;
+    }
 
     public function inserirUsuario() {
     
@@ -31,22 +35,18 @@ class Usuario {
     public function loginUser() {
       $stmt = $this->conexao->prepare("SELECT id, email, username, senha FROM usuario WHERE email = :email AND senha = :senha LIMIT 1");
 
-      $email = $this->getEmail();
-      $senha = $this->getSenha();
+      $email = $this->email;
+      $senha = $this->senha;
+      $senha2 = md5($senha);
 
-      echo "$email <br>";
-      echo "$senha <br>";
       $stmt->bindParam(":email", $email);
-      $stmt->bindParam(":senha", $senha);
+      $stmt->bindParam(":senha", $senha2);
 
 
       $stmt->execute();
 
       $resultLogin = $stmt->fetch();
       
-      echo $resultLogin['email'] . "<br>";
-      echo $resultLogin['id'] . "<br>";
-      echo $resultLogin['username'] . "<br>";
       if ($resultLogin) {
         session_start();
         $_SESSION['email'] = $resultLogin['email'];

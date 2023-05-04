@@ -18,37 +18,6 @@ header {
     height: 80px;
 }
 
-.navbar {
-    display: flex;
-    align-items: center;
-}
-
-.navbar ul {
-    display: flex;
-}
-
-.navbar ul li {
-    color: #38B6FF;
-    padding: 0px 8px;
-    text-transform: uppercase;
-    transition: 0.4s;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-.navbar ul li:hover {
-    color: #000000;
-}
-
-.navbar i {
-    color: #38B6FF;
-
-}
-
-.navbar i:hover {
-    color: #000000;
-}
-
 .container {
     display: flex;
     flex-direction: column;

@@ -14,4 +14,4 @@ $user->email = $email;
 $user->senha = $senha;
 
 
-$user->loginUser();
+$user->loginUser(); 
