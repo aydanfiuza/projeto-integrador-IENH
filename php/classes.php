@@ -1,62 +1,13 @@
 <?php
 
+require_once("url.php");
+
 class Usuario {
-    private $username;
-    private $nome;
-    private $email;
-    private $senha;
-    private $cnpj;
-    private $conexao;
-
-    public function __construct(PDO $conexao){
-      $this->conexao = $conexao;
-    }
-
-
-    // GETTERS SETTERS USERNAME
-    public function setUsername($username) {
-        $this->username = $username;
-    }
-
-    public function getUsername() {
-        return $this->username;
-    }
-
-    // GETTERS SETTERS NOME
-    public function setNome($nome) {
-        $this->nome = $nome;
-    }
-
-    public function getNome() {
-        return $this->nome;
-    }
-
-    // GETTERS SETTERS EMAIL
-    public function setEmail($email) {
-        $this->email = $email;
-    }
-
-    public function getEmail() {
-        return $this->email;
-    }
-
-    // GETTERS SETTERS SENHA
-    public function setSenha($senha) { 
-        $this->senha = MD5($senha);
-    }
-
-    public function getSenha() {
-        return $this->senha;
-    }
-
-    // GETTERS SETTERS CNPJ
-    public function setCNPJ($cnpj) {
-        $this->cnpj = $cnpj;
-    }
-
-    public function getCNPJ() {
-        return $this->cnpj;
-    }
+    public $username;
+    public $nome;
+    public $email;
+    public $senha;
+    public $cnpj;
 
 
     public function inserirUsuario() {
@@ -82,19 +33,25 @@ class Usuario {
 
       $email = $this->getEmail();
       $senha = $this->getSenha();
+
+      echo "$email <br>";
+      echo "$senha <br>";
       $stmt->bindParam(":email", $email);
       $stmt->bindParam(":senha", $senha);
+
 
       $stmt->execute();
 
       $resultLogin = $stmt->fetch();
       
+      echo $resultLogin['email'] . "<br>";
+      echo $resultLogin['id'] . "<br>";
+      echo $resultLogin['username'] . "<br>";
       if ($resultLogin) {
         session_start();
         $_SESSION['email'] = $resultLogin['email'];
         $_SESSION['id'] = $resultLogin['id'];
         $_SESSION['username'] = $resultLogin['username'];
-        $_SESSION['nome'] = $resultLogin['nome'];
 
         header("Location: ../index.php");
       }
@@ -102,3 +59,9 @@ class Usuario {
 
 }
 
+interface UserDAOInterface {
+    public function buildUser($data);
+    public function create(User $user, $authUser = false);
+    public function authenticateUser($email, $password);
+
+}

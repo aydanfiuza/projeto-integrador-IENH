@@ -1,32 +1,7 @@
-<?php
-  include_once("php/conexao.php");
-  include_once("php/url.php");
-
-  session_start();
-
-  if (isset($_SESSION['username'])) {
-    $username = $_SESSION['username'];
-    $id = $_SESSION['id'];
-    $nome = $_SESSION['nome'];
-  }
-
+<?php 
+  $titulo = "Home";
+  include_once("templates/testeNav.php");
 ?>
-
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="<?= $BASE_URL ?>/css/style.css">
-    <link rel="stylesheet" href="<?= $BASE_URL ?>/css/responsive.css">
-
-    <title>Início</title>
-</head>
-<body>
-    
-  <?php include_once("templates/nav.php"); ?>
     <main class="container">
         <div class="div-welcome">
             <h1 class="h1-welcome">Bem-vindo ao InventoryControl</h1>

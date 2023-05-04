@@ -1,4 +1,5 @@
 <?php
+
 include_once("conexao.php");
 include_once("classes.php");
 
@@ -9,7 +10,8 @@ $senha = $_POST["senha"];
 
 $user = new Usuario($conexao);
 
-$user->setEmail($email);
-$user->setSenha($senha);
+$user->email = $email;
+$user->senha = $senha;
+
 
 $user->loginUser();
