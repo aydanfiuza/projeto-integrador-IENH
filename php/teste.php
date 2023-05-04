@@ -1,15 +1,20 @@
 <?php
 
+include_once("../dao/UserDAO.php");
 include_once("conexao.php");
-include_once("classes.php");
 
-$user = new Usuario($conexao);
+$user = new UserDAO($conexao);
 
-$user->setUsername("lucassantos");
-$user->setNome("Lucas Santos");
-$user->setEmail("lucassantos@gmail.com");
-$user->setSenha("lucassantos123");
-$user->setCNPJ("XX.XX.XXX/0001-XX");
+$data = [
+  "username" => "joaosilva",
+  "nome" => "Joao Silva",
+  "email" => "joaosilva@gmail.com",
+  "senha" => "joaosilva",
+  "cnpj" => "XX.XX.XXX/0001-XX"
+];
 
-$user->inserirUsuario();
-// $user->loginUser();
+$senha = $data['senha'];
+$email = $data['email'];
+//$novoUsuario = $user->buildUser($data);
+//$user->create($novoUsuario);
+$user->authenticateUser($email, $senha);

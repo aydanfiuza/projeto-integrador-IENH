@@ -1,17 +1,14 @@
 <?php
 
 include_once("conexao.php");
-include_once("classes.php");
+include_once("../dao/UserDAO.php");
+
+$userDAO = new UserDAO($conexao);
+
+$email = filter_input(INPUT_POST, "email");
+$senha = filter_input(INPUT_POST, "senha");
 
 
-$email = $_POST["email"];
-$senha = $_POST["senha"];
-
-
-$user = new Usuario($conexao);
-
-$user->email = $email;
-$user->senha = $senha;
-
-
-$user->loginUser(); 
+if($userDAO->authenticateUser($email, $senha)) {
+  header("Location: ../index.php");
+}

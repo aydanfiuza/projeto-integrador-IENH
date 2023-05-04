@@ -1,6 +1,6 @@
 <?php 
   $titulo = "Home";
-  include_once("templates/testeNav.php");
+  include_once("templates/header.php");
 ?>
     <main class="container">
         <div class="div-welcome">

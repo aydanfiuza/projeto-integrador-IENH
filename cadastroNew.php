@@ -2,7 +2,7 @@
   $titulo = "Novo Cadastro";
   include_once("php/conexao.php");
   include_once("php/url.php");
-  include_once("templates/testeNav.php");
+  include_once("templates/header.php");
 ?>
 
 

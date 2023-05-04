@@ -1,30 +1,32 @@
 <?php
 
-    require_once("../php/classes");
+    include_once("classes.php");
+    
 
     class UserDAO implements UserDAOInterface {
         private $conn;
-        private $url;
+        
 
-        public function __construct(PDO $conn, $url) {
+        public function __construct(PDO $conn) {
             $this->conn = $conn;
-            $this->url = $url;
+            
         }
 
         public function buildUser($data) {
-            $user = new User();
+            $user = new Usuario();
 
+            $user->id = $data['id'];
             $user->username = $data['username'];
             $user->nome = $data['nome'];
             $user->email = $data['email'];
             $user->senha = $data['senha'];
-            $user->cnpj = $data['username'];
+            $user->cnpj = $data['cnpj'];
 
             return $user;
 
         }
 
-        public function create(Usuario $user, $autenticar = false) {
+        public function create(Usuario $user) {
 
             $stmt = $this->conn->prepare("INSERT INTO usuario
             (username, nome, email, senha, cnpj)
@@ -37,5 +39,69 @@
             $stmt->bindParam(":cnpj", $user->cnpj);
 
             $stmt->execute();
+
+            
+        }
+
+        public function authenticateUser($email, $senha) {
+
+          $user = $this->findByEmail($email);
+
+          if ($user) {
+            if(password_verify($senha, $user->senha)) {
+              session_start();
+              $_SESSION['username'] = $user->username;
+              $_SESSION['id'] = $user->id;
+
+              
+              header("Location: ../index.php");
+            }
+          }
+          
+          
+        }
+
+        public function findByEmail($email) {
+          
+          if($email != "") {
+
+            $stmt = $this->conn->prepare("SELECT * FROM usuario WHERE email = :email");
+
+            $stmt->bindParam(":email", $email);
+
+            $stmt->execute();
+
+            if($stmt->rowCount() > 0) {
+
+              $data = $stmt->fetch();
+              
+              $user = $this->buildUser($data);
+
+              return $user;
+            } else {
+              return false;
+            }
+          } else {
+            return false;
+          }
+
+        }
+
+        public function findUserLogin($id, $username) {
+          $stmt = $this->conn->prepare("SELECT * FROM usuario WHERE id = :id AND username = :username LIMIT 1");
+
+          $stmt->bindParam(":id", $id);
+          $stmt->bindParam(":username", $username);
+
+          $stmt->execute();
+
+          if($stmt->rowCount() == 1) {
+            
+            $data = $stmt->fetch();
+            $user = $this->buildUser($data);
+
+            return $user;
+          }
+
         }
     }
