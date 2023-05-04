@@ -9,11 +9,6 @@
     font-family: "Rubik";
 }
 
-a {
-  text-decoration: none!important;
-}
-
-
 header {
     display: flex;
     justify-content: space-between;
@@ -31,6 +26,7 @@ header {
 .navbar ul {
     display: flex;
 }
+
 .link-disabled, .link-disabled a{
   color: #000000!important;
   padding: 0px 8px;
@@ -38,6 +34,7 @@ header {
   text-transform: uppercase;
   font-size: 20px;
 }
+
 .link-enabled, .link-enabled a {
     color: #38B6FF;
     padding: 0px 8px;
@@ -50,9 +47,6 @@ header {
 .link-enabled:hover, .link-enabled a:hover {
     color: #000000;
 }
-
-
-
 
 .i-link-enabled {
     color: #38B6FF;
