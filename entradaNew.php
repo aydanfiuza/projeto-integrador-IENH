@@ -3,7 +3,6 @@
   include_once("php/url.php");
 ?>
 
-
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -12,8 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="<?= $BASE_URL ?>/css/cadastroNew.css">
+
     <link rel="stylesheet" href="<?= $BASE_URL ?>/css/responsive.css">
-    <link rel="stylesheet" href="<?= $BASE_URL ?>/css/style.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
@@ -42,11 +41,10 @@
         </div>
     </main>
 
-
     <?php include_once("templates/footer.php"); ?>
 
-
     <script src="https://kit.fontawesome.com/5fda86d671.js" crossorigin="anonymous"></script>
+
     <script src="<?= $BASE_URL ?>/js/index.js"></script>
     
 </body>

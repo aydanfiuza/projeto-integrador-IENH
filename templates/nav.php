@@ -46,15 +46,15 @@
         <span>Entrada</span>
       </li></a>
 
-      <li id="saida" class="<?= $link['li'] ?>">
+      <a href="<?= $BASE_URL ?>/saida.php"><li id="saida" class="<?= $link['li'] ?>">
         <i <?php if (isset($username)) {echo 'id="cor3"';}?> class="<?= $link['li'] ?> fa-solid fa-minus"></i>
         <span>Saída</span>
-      </li>
+      </li></a>
 
-      <li id="relatorio" class="<?= $link['li'] ?>">
+      <a href="<?= $BASE_URL ?>/estoque.php"><li id="relatorio" class="<?= $link['li'] ?>">
         <i <?php if (isset($username)) {echo 'id="cor4"';}?> class="<?= $link['li'] ?> fa-solid fa-file"></i>
         <span>Relatório</span>
-      </li>
+      </li></a>
 
     </ul>
   </nav>
