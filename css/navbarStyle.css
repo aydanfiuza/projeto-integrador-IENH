@@ -44,6 +44,18 @@ font-size: 20px;
   color: #000000;
 }
 
+.link-enabled-danger{
+  color: #38B6FF;
+  padding: 0px 8px;
+  text-transform: uppercase;
+  transition: 0.2s;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.link-enabled-danger:hover {
+  color: rgb(196, 8, 8)!important;
+}
 
 
 

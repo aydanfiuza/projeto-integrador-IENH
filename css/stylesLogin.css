@@ -40,6 +40,20 @@ body {
     gap: 60px;
 }
 
+.cadastro .left {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  width: 40vw;
+  height: 85vh;
+  background-color: #38B6FF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+
 .p-left {
     width: 500px;
     font-size: 22px;
@@ -78,6 +92,19 @@ body {
     flex-wrap: wrap;
 }
 
+.cadastro .right {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 40vw;
+  height: 85vh;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 #form-login {
     display: flex;
     flex-direction: column;
@@ -87,8 +114,14 @@ body {
 .input-field {
     border: none;
     height: 50px;
-    width: 250px;
+    width: 350px;
     display: flex;
+}
+
+.label-form {
+  padding-right: 10px;
+  width: 36%;
+  margin: auto;
 }
 
 input {
@@ -97,6 +130,10 @@ input {
     border: 1px solid black;
     border-radius: 8px;
     padding: 0px 10px;
+}
+
+.button-cadastrar {
+  width: 150px!important;
 }
 
 .button-right {

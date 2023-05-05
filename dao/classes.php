@@ -12,7 +12,7 @@ class Usuario {
 
 interface UserDAOInterface {
     public function buildUser($data);
-    public function create(Usuario $user);
+    public function create(Usuario $user, $auth = false);
     public function authenticateUser($email, $password);
     public function findByEmail($email);
     public function findUserLogin($id, $username);

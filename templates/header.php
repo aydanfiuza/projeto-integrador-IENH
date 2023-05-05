@@ -63,6 +63,8 @@
       <link rel="stylesheet" href="<?= $BASE_URL ?>/css/cadastroNew.css">
     <?php endif; ?>
 
+    
+
     <title><?= $titulo ?></title>
 </head>
 <body>
@@ -107,12 +109,17 @@
         </li>
       <!-- SE ESTIVER -->
       <?php else: ?>
+        <li id="sair" class="link-enabled-danger" onclick="location.href='<?= $BASE_URL ?>/php/processoSair.php';">
+          <span>Sair</span>
+        </li>
+
+
         <li id="username" class="link-enabled">
           <i id ="cor5" class="fa-solid fa-user"></i>
           <span><?= $user->username ?></span>
         </li>
 
-              <!-- LINK INDEX/HOME -->
+      <!-- LINK INDEX/HOME -->
       <a href="<?= $BASE_URL ?>/index.php">
         <li id="home" class="<?= $tagHome ?>">
           <i <?php if (!$checkHome) {echo 'id="cor0"';}?> class="<?= $iHome ?> fa-solid fa-house"></i>

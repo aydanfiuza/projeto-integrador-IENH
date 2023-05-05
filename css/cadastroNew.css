@@ -58,6 +58,7 @@ form {
     background: #38B6FF;
     border: 1px solid #38B6FF;
     transition: 0.4s;
+    cursor: pointer;
 }
 
 #submit-button:hover {

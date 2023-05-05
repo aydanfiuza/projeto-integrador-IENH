@@ -28,7 +28,7 @@
     <div class="left">
         <h1 class="title-left">Bem-vindo!</h1>
         <p class="p-left">Ainda não tem uma conta e gostaria de fazer parte da nossa história? Cadastre-se agora!</p>
-        <button class="button-left">Cadastre-se</button>
+        <button class="button-left" onclick="location.href='<?= $BASE_URL ?>/cadastroUser.php';" >Cadastre-se</button>
       </div>
       <div class="right">
         <form action="php/processoLogin.php" method="POST" id="form-login">

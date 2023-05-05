@@ -26,7 +26,7 @@
 
         }
 
-        public function create(Usuario $user) {
+        public function create(Usuario $user, $auth= false) {
 
             $stmt = $this->conn->prepare("INSERT INTO usuario
             (username, nome, email, senha, cnpj)
@@ -35,10 +35,14 @@
             $stmt->bindParam(":username", $user->username);
             $stmt->bindParam(":nome", $user->nome);
             $stmt->bindParam(":email", $user->email);
-            $stmt->bindParam(":senha", $user->senha);
+            $stmt->bindParam(":senha", password_hash($user->senha, PASSWORD_DEFAULT) );
             $stmt->bindParam(":cnpj", $user->cnpj);
 
             $stmt->execute();
+
+            if ($auth) {
+              $this->authenticateUser($user->email, $user->senha);
+            }
 
             
         }

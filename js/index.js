@@ -12,10 +12,12 @@ const iconeLogin = document.getElementById("login");
 const iconeUser = document.getElementById("user");
 const corLogin = document.getElementById("cor5");
 
+
 iconeHome.onmouseover = () => {
     corHome.style.color = "black";
     corHome.style.transition = "0.4s";
 }
+
 
 iconeHome.onmouseout = () => {
     corHome.style.color = "#38B6FF";
