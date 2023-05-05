@@ -79,7 +79,8 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `username`, `nome`, `email`, `senha`, `cnpj`) VALUES
-(1, 'lucassantos', 'Lucas Santos', 'lucassantos@gmail.com', 'ce7386311cbea2e4e83fc20efe235018', 'XX.XX.XXX/0001-XX');
+(1, 'lucassantos', 'Lucas Santos', 'lucassantos@gmail.com', 'ce7386311cbea2e4e83fc20efe235018', 'XX.XX.XXX/0001-XX'),
+(2, 'mateuskirch', 'Mateus Kirch', 'mateusk@gmail.com', '4de2b58e561b1ddcafec5672478597ca', 'XX.XX.XXX/0002-XX');
 
 --
 -- Restrições para despejos de tabelas
@@ -101,6 +102,9 @@ ALTER TABLE `movimentacao`
 -- Insere Valores em PRODUTO --
 
 INSERT INTO `projeto_integrador`.`estoque` (`idProduto`, `marca`, `descricao`, `unidade`, `quantidade`) VALUES 
-('1', 'Razer', 'Mouse DeathAdder V2', 'un', '5'),
-('2', 'Dell', 'Notebook Preto', 'un', '2'),
-('3', 'Samsung', 'Celular Galaxy 30', 'un', '18')
+('1', 'Razer', 'Mouse DeathAdder V2 Verde', 'un', '5'),
+('2', 'Dell', 'Notebook Dell Inspiron Preto', 'un', '2'),
+('3', 'Samsung', 'Celular Galaxy 30 Branco', 'un', '18'),
+('4', 'Razer', 'Headset Kaira PRO Verde', 'un', '5'),
+('5', 'Razer', 'Headset Kraken Verde', 'un', '6'),
+('6', 'Apple', 'Celular Phone 14 Preto', 'un', '5');
