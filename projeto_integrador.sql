@@ -78,8 +78,10 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 -- Extraindo dados da tabela `usuario`
 --
 
-INSERT INTO `usuario` (`id`, `username`, `nome`, `email`, `senha`, `cnpj`) VALUES
-(1, 'lucassantos', 'Lucas Santos', 'lucassantos@gmail.com', 'ce7386311cbea2e4e83fc20efe235018', 'XX.XX.XXX/0001-XX'),
+-- CRIPTOGRAFIA DA SENHA MUDADA PARA HASH NO CÓDIGO FONTE (ass gabriel)
+INSERT INTO `usuario` (`id`, `username`, `nome`, `email`, `senha`, `cnpj`) VALUES -- senha antiga em md5 lucassantos: ce7386311cbea2e4e83fc20efe235018
+--senha nova lucassantos dentro do insert, senha do mateus foi de arrasta pra cima
+(1, 'lucassantos', 'Lucas Santos', 'lucassantos@gmail.com', '$2y$10$LsQVmelMvQuBnNdZV7bJ/e.nkcvx/DHBV4M8q6Y5E31dVxFg/tjSu', 'XX.XX.XXX/0001-XX'),
 (2, 'mateuskirch', 'Mateus Kirch', 'mateusk@gmail.com', '4de2b58e561b1ddcafec5672478597ca', 'XX.XX.XXX/0002-XX');
 
 --
